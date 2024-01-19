@@ -1,0 +1,14 @@
+steps:
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "gcr.io/vocal-territory-407809/dispatch-extension:$SHORT_SHA",
+        "-f",
+        "Dockerfile",
+        ".",
+      ]
+
+images:
+  - "gcr.io/vocal-territory-407809/dispatch-extension:$SHORT_SHA"
