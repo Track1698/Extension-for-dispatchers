@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "CentralDispatch დამხმარე",
+  "version": "1.0",
+  "description": "აღწერა",
+  "permissions": ["webRequest", "storage", "notifications", "offscreen"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "assets/16.png",
+      "48": "assets/48.png",
+      "128": "assets/128.png"
+    }
+  },
+  "icons": {
+    "16": "assets/16.png",
+    "48": "assets/48.png",
+    "128": "assets/128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
