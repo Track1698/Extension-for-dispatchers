@@ -27,7 +27,7 @@
         </a>
       </form>
     </div>
-    <div class="custom-scrollbar">
+    <div class="custom-scrollbar"></div>
       <div id="searchFormElement" class="display-none display-none-last">
         <div class="back-arrow-container">
           <div title="Go back" class="backArrow" id="backArrowButton">
@@ -48,7 +48,13 @@
 
           <div>
             <label for="origin" class="form-label">Origin:</label>
-            <input type="text" id="origin" name="origin" class="form-input" />
+            <input
+              type="text"
+              id="origin"
+              name="origin"
+              class="form-input"
+              placeholder="Search"
+            />
             <ul id="origin-suggestion-list"></ul>
           </div>
 
@@ -72,6 +78,7 @@
               id="destination"
               name="destination"
               class="form-input"
+              placeholder="Search"
             />
             <ul id="destination-suggestion-list"></ul>
           </div>
@@ -110,8 +117,8 @@
               class="dropdown-check-list"
               tabindex="100"
             >
-              <span class="anchor">All (Default)</span>
-              <ul class="items">
+              <span class="anchor" id="vehiclesAnchor">All (Default)</span>
+              <ul class="items" id="vehicleTypesCheckboxList">
                 <li><input type="checkbox" id="pickupCheckbox" />Pickup</li>
                 <li><input type="checkbox" id="boatCheckbox" />Boat</li>
                 <li><input type="checkbox" id="rvCheckbox" />RV</li>
@@ -282,206 +289,93 @@
           />
         </form>
       </div>
-    </div>
 
-    <div
-      id="searchListElement"
-      class="search-list display-none display-none-last"
-    >
-      <div class="back-arrow-container">
-        <div title="Go back" class="backArrow" id="backSearchListButton">
-          &#10140;
-        </div>
-      </div>
-
-      <h1>ACTIVE SEARCH FILTERS</h1>
-      <div id="fullActiveSearchListContainer">
-        <h2>There are no search filters set</h2>
-      </div>
-    </div>
-
-    <div id="blacklistControlElement" class="display-none display-none-last">
-      <div class="back-arrow-container">
-        <div title="Go back" class="backArrow" id="backArrowButton2">
-          &#10140;
-        </div>
-      </div>
-      <h1>Blacklist</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>N</th>
-            <th>Name</th>
-            <th>Address</th>
-          </tr>
-        </thead>
-        <tbody id="tableBody">
-          <tr>
-            <td></td>
-            <td>
-              <input
-                type="text"
-                placeholder="Name"
-                id="addBlacklistItemNameInput"
-              />
-            </td>
-            <td>
-              <input
-                type="text"
-                placeholder="Address"
-                id="addBlacklistItemAddressInput"
-              />
-            </td>
-            <td style="width: 24px; border: none">
-              <button class="add-row-btn" id="addRowButton">+</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div
-      id="controlElement"
-      class="searches-group display-none display-none-last"
-    >
-      <div id="sidebar">
-        <ul>
-          <li>
-            <a href="#" id="activeFiltersButton">Active search filters</a>
-          </li>
-          <li><a href="#" id="blacklistControlButton">Blacklist</a></li>
-          <li><a href="#">Profile settings</a></li>
-        </ul>
-
-        <div id="sidebar-btn">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-      <div class="control-title">CentralDispatch</div>
-
-      <div class="loads-alert-container" id="loadsAlertContainer">
-        <div class="load-alert">
-          <div class="load-alert-first-element">
-            <div class="main-load-alert-component name">
-              Name: <span>Testing</span>
-            </div>
-            <div class="main-load-alert-component origin">
-              O: <span>Chalfont, PA 18914</span>
-            </div>
-            <div class="main-load-alert-component age">
-              Age: <span>10min</span>
-            </div>
-            <div class="main-load-alert-component order-id">
-              Order ID: <span>55466545</span>
-            </div>
-            <div class="main-load-alert-component destination">
-              D: <span>Linden, NJ 07036</span>
-            </div>
-            <div class="main-load-alert-component total-pay">
-              Total Pay: <span>1500$</span>
-            </div>
-
-            <div class="main-load-alert-component mileage">
-              Mileage: <span>589 miles</span>
-            </div>
-            <div class="main-load-alert-component shipper">
-              Shipper: <span>Someone Company</span>
-            </div>
-            <div class="main-load-alert-component rate-per-mile">
-              Rate/mile: <span>1.5$</span>
-            </div>
-            <div class="maps-icon-container" id="mapsIcon">
-              <a href=""><img src="./assets/icon.png" class="maps-icon" /></a>
-            </div>
-            <div class="expand-alert-container" id="expandAlert">
-              <i class="arrow-black down"></i>
-            </div>
+      <div
+        id="searchListElement"
+        class="search-list display-none display-none-last"
+      >
+        <div class="back-arrow-container">
+          <div title="Go back" class="backArrow" id="backSearchListButton">
+            &#10140;
           </div>
-          <div class="load-alert-tabs display-none-last">
-            <div class="tab-one"><span>INFO</span></div>
-            <div class="tab-two"><span>VEHICLES</span></div>
+        </div>
+
+        <h1>ACTIVE SEARCH FILTERS</h1>
+        <div id="fullActiveSearchListContainer">
+          <h2>There are no search filters set</h2>
+        </div>
+      </div>
+
+      <div id="blacklistControlElement" class="display-none display-none-last">
+        <div class="back-arrow-container">
+          <div title="Go back" class="backArrow" id="backArrowButton2">
+            &#10140;
           </div>
-          <div
-            class="load-alert-second-element info-tab display-none-last"
-            id="loadAlertSecondElement"
+        </div>
+        <h1>Blacklist</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>N</th>
+              <th>Name</th>
+              <th>Address</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr>
+              <td></td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Name"
+                  id="addBlacklistItemNameInput"
+                />
+              </td>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Address"
+                  id="addBlacklistItemAddressInput"
+                />
+              </td>
+              <td style="width: 24px; border: none">
+                <button class="add-row-btn" id="addRowButton">+</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div
+        id="controlElement"
+        class="searches-group display-none display-none-last"
+      >
+        <div id="sidebar">
+          <ul>
+            <li>
+              <a href="#" id="activeFiltersButton">Active search filters</a>
+            </li>
+            <li><a href="#" id="blacklistControlButton">Blacklist</a></li>
+            <li><a href="#">Profile settings</a></li>
+          </ul>
+
+          <div id="sidebar-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <div class="control-title">CentralDispatch</div>
+
+        <div class="loads-alert-container" id="loadsAlertContainer"></div>
+        <div class="plus-container">
+          <span
+            class="pulse-button"
+            id="addNewSearch"
+            title="Add new search filter"
+            >+</span
           >
-            <div class="secondary-load-alert-component vehicle-count">
-              Vehicle Count: <span>5 mixed vehicles</span>
-            </div>
-            <div class="secondary-load-alert-component weight">
-              Max weight: <span>5544 lbs</span>
-            </div>
-            <div class="secondary-load-alert-component dimensions">
-              Max Dimensions: <span>211″ L x 73″ W x 76″ H</span>
-            </div>
-            <div class="secondary-load-alert-component pick-up-date">
-              Pick-up Date <span>01/17/24</span>
-            </div>
-            <div class="secondary-load-alert-component delivery-date">
-              Delivery Date: <span>01/18/24</span>
-            </div>
-            <div class="secondary-load-alert-component phone">
-              Phone: <span>972-921-0681</span>
-            </div>
-            <div class="secondary-load-alert-component hours">
-              Hours: <span>M-Sat 9-6 CST</span>
-            </div>
-            <div class="secondary-load-alert-component rating">
-              Rating: <span>4.9/5 (101)</span>
-            </div>
-            <div class="secondary-load-alert-component payment-method">
-              Pay Method: <span>4.9/5 (101)</span>
-            </div>
-            <div class="secondary-load-alert-component payment-terms">
-              Pay Terms Begin: <span>4.9/5 (101)</span>
-            </div>
-            <div class="secondary-load-alert-component payment-time">
-              Pay Time: <span>30 Days</span>
-            </div>
-            <div class="secondary-load-alert-component tier-group">
-              Tier Group: <span>Broker</span>
-            </div>
-            <div class="secondary-load-alert-component additional-info">
-              Additional Info:
-              <span
-                >three of them roll,break steer,one runs and drives.winch is
-              </span>
-            </div>
-          </div>
-          <div
-            class="load-alert-third-element vehicles-tab display-none-last"
-            id="loadAlertThirdElement"
-          >
-            <div class="vehicles-list">
-              <table class="vehicles-list-table">
-                <thead>
-                  <tr>
-                    <th>Vehicle</th>
-                    <th>Weight</th>
-                    <th>Dimensions</th>
-                  </tr>
-                </thead>
-                <tbody class="vehicles-list-table-content">
-                  <tr>
-                    <td>2016 Mercedes-Benz Gl-Class</td>
-                    <td>3902 Lbs</td>
-                    <td>191″ L X 73″ W X 58″ H</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
         </div>
-      </div>
-      <div class="plus-container">
-        <span
-          class="pulse-button"
-          id="addNewSearch"
-          title="Add new search filter"
-          >+</span
-        >
       </div>
     </div>
 
@@ -489,6 +383,8 @@
       <div class="half"></div>
       <div class="half"></div>
     </div>
+
+    <div id="hover" class="display-none-last"></div>
 
     <script src="popup.js"></script>
   </body>

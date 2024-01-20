@@ -2,3 +2,4 @@
 /Backend
 obfuscate.bat
 /node_modules
+obfuscator-config.js
