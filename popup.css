@@ -364,7 +364,11 @@ body {
   --r: 150px;
   height: var(--r);
   width: var(--r);
-  margin-top: 30%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 50;
 
   .half {
     width: inherit;
@@ -1253,4 +1257,15 @@ li.checked {
 
 .display-none-last {
   display: none !important;
+}
+
+#hover {
+  background-color: #000000bf;
+  width: 800px;
+  height: 100%;
+  z-index: 40;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
