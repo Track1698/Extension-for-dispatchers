@@ -1269,3 +1269,18 @@ li.checked {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.operable-container {
+  grid-row: none;
+  position: absolute;
+  right: 109px;
+  margin-top: 20px;
+}
+
+.operable-container span {
+  font-weight: 400;
+}
+
+.operable-icon.red {
+  color: red;
+}

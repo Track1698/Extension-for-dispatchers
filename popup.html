@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="popup.css" />
+    <link rel="preload" href="./assets/font.woff2" as="font" type="font/woff2" crossorigin="anonymous">
   </head>
   <body>
     <div class="login-box display-none display-none-last" id="loginElement">
@@ -156,8 +157,8 @@
             >
             <select id="vehicleStatus" name="vehicleStatus" class="form-select">
               <option value="All">All (Default)</option>
-              <option value="operable">Operable</option>
-              <option value="inoperable">Inoperable</option>
+              <option value="OperableOnly">Operable</option>
+              <option value="HasInOperable">Inoperable</option>
             </select>
           </div>
 
