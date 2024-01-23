@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "CentralDispatch დამხმარე",
+  "name": "Central Tracker",
   "version": "1.0",
-  "description": "Our extension will help you find posted car loads on CentralDispatch easier and faster than ever.",
+  "description": "Our extension will help you find posted car loads on Central easier and faster than ever.",
   "permissions": ["webRequest", "storage", "notifications", "offscreen"],
   "host_permissions": ["<all_urls>"],
   "action": {
