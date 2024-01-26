@@ -1284,3 +1284,7 @@ li.checked {
 .operable-icon.red {
   color: red;
 }
+.delete-table-row-button {
+  border-radius: 30%;
+  font-weight: bold;
+}
