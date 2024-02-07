@@ -4,11 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="popup.css" />
-    <link rel="preload" href="./assets/font.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link
+      rel="preload"
+      href="./assets/font.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
     <div class="login-box display-none display-none-last" id="loginElement">
-      <h2>CentralTracker</h2>
+      <h2>DispatchTracker</h2>
       <form>
         <div class="user-box">
           <input type="text" name="" required="" id="emailInput" />
@@ -29,361 +35,390 @@
       </form>
     </div>
     <div class="custom-scrollbar"></div>
-      <div id="searchFormElement" class="display-none display-none-last">
-        <div class="back-arrow-container">
-          <div title="Go back" class="backArrow" id="backArrowButton">
-            &#10140;
-          </div>
+    <div id="searchFormElement" class="display-none display-none-last">
+      <div class="back-arrow-container">
+        <div title="Go back" class="backArrow" id="backArrowButton">
+          &#10140;
         </div>
-        <h1 id="searchFormElementTitle">ADD NEW SEARCH FILTER</h1>
-        <form class="nice-form-group scrollbar">
-          <div>
-            <label for="searchName" class="form-label">Search Name:</label>
-            <input
-              type="text"
-              id="searchName"
-              name="searchName"
-              class="form-input"
-            />
-          </div>
-
-          <div>
-            <label for="origin" class="form-label">Origin:</label>
-            <input
-              type="text"
-              id="origin"
-              name="origin"
-              class="form-input"
-              placeholder="Search"
-            />
-            <ul id="origin-suggestion-list"></ul>
-          </div>
-
-          <div>
-            <label for="startRadius" class="form-label" id="startRadiusLabel"
-              >Start Radius (Miles):</label
-            >
-            <input
-              type="number"
-              id="startRadius"
-              name="startRadius"
-              class="form-input"
-              placeholder="50"
-            />
-          </div>
-
-          <div>
-            <label for="destination" class="form-label">Destination:</label>
-            <input
-              type="text"
-              id="destination"
-              name="destination"
-              class="form-input"
-              placeholder="Search"
-            />
-            <ul id="destination-suggestion-list"></ul>
-          </div>
-
-          <div>
-            <label for="endRadius" class="form-label"
-              >End Radius (Miles):</label
-            >
-            <input
-              type="number"
-              id="endRadius"
-              name="endRadius"
-              class="form-input"
-              placeholder="50"
-            />
-          </div>
-
-          <div>
-            <label>Search Along Route</label>
-            <label for="searchAlongRoute" class="switch">
-              <input
-                type="checkbox"
-                id="searchAlongRoute"
-                name="searchAlongRoute"
-                class="form-checkbox"
-              />
-              <span class="slider round"></span>
-            </label>
-          </div>
-
-          <!-- Vehicle Details -->
-          <div>
-            <label class="form-label">Vehicle Type:</label>
-            <div
-              id="dropdownChecklist"
-              class="dropdown-check-list"
-              tabindex="100"
-            >
-              <span class="anchor" id="vehiclesAnchor">All (Default)</span>
-              <ul class="items" id="vehicleTypesCheckboxList">
-                <li><input type="checkbox" id="pickupCheckbox" />Pickup</li>
-                <li><input type="checkbox" id="boatCheckbox" />Boat</li>
-                <li><input type="checkbox" id="rvCheckbox" />RV</li>
-                <li><input type="checkbox" id="carCheckbox" />Car</li>
-                <li><input type="checkbox" id="suvCheckbox" />SUV</li>
-                <li class="heavy">
-                  <input type="checkbox" id="heavyCheckbox" />Heavy Equipment
-                </li>
-                <li>
-                  <input type="checkbox" id="travelCheckbox" />Travel Trailer
-                </li>
-                <li><input type="checkbox" id="largeCheckbox" />Large Yacht</li>
-                <li><input type="checkbox" id="vanCheckbox" />Van</li>
-                <li>
-                  <input type="checkbox" id="motorcycleCheckbox" />Motorcycle
-                </li>
-                <li><input type="checkbox" id="otherCheckbox" />Other</li>
-              </ul>
-            </div>
-          </div>
-
-          <div>
-            <label for="trailerType" class="form-label">Trailer Type:</label>
-            <select id="trailerType" name="trailerType" class="form-select">
-              <option value="All">All (Default)</option>
-              <option value="OPEN">Open</option>
-              <option value="ENCLOSED">Enclosed</option>
-              <option value="DRIVEAWAY">Driveaway</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="vehicleStatus" class="form-label"
-              >Vehicle Status:</label
-            >
-            <select id="vehicleStatus" name="vehicleStatus" class="form-select">
-              <option value="All">All (Default)</option>
-              <option value="OperableOnly">Operable</option>
-              <option value="HasInOperable">Inoperable</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="minNumVehicles" class="form-label"
-              >Min Number of Vehicles:</label
-            >
-            <select
-              id="minNumVehicles"
-              name="minNumVehicles"
-              class="form-select"
-            >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </div>
-
-          <div>
-            <label for="maxNumVehicles" class="form-label"
-              >Max Number of Vehicles</label
-            >
-            <select
-              id="maxNumVehicles"
-              name="maxNumVehicles"
-              class="form-select"
-            >
-              <option value="all">All (Default)</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </div>
-          <!-- Delivery Details -->
-          <div>
-            <label for="deliveryDate" class="form-label">Delivery Date:</label>
-            <input
-              type="date"
-              id="deliveryDate"
-              name="deliveryDate"
-              class="form-input"
-            />
-          </div>
-
-          <div>
-            <label for="readyToShipWithin" class="form-label"
-              >Ready to Ship Within:</label
-            >
-            <select
-              id="readyToShipWithin"
-              name="readyToShipWithin"
-              class="form-select"
-            >
-              <option value="all">All (Default)</option>
-              <option value="1">1 day</option>
-              <option value="2">2 days</option>
-              <option value="3">3 days</option>
-              <option value="4">4 days</option>
-            </select>
-          </div>
-
-          <!-- Payment Details -->
-          <div>
-            <label for="paymentType" class="form-label">Payment Type:</label>
-            <select id="paymentType" name="paymentType" class="form-select">
-              <option value="all">All (Default)</option>
-              <option value="COD_COP">COD/COP</option>
-              <option value="COD_COP_QUICKPAY_COMCHEK">
-                COD/COP/Quickpay/Comcheck
-              </option>
-            </select>
-          </div>
-
-          <div>
-            <label for="minTotalPay" class="form-label">Min Total Pay $:</label>
-            <input
-              type="number"
-              id="minTotalPay"
-              name="minTotalPay"
-              class="form-input"
-            />
-          </div>
-
-          <div>
-            <label for="minRatePerMile" class="form-label"
-              >Min Rate per Vehicle per Mile $:</label
-            >
-            <input
-              type="number"
-              id="minRatePerMile"
-              name="minRatePerMile"
-              class="form-input"
-            />
-          </div>
-
-          <div>
-            <label>Blacklist</label>
-            <label for="blacklist" class="switch">
-              <input
-                type="checkbox"
-                id="blacklist"
-                name="blacklist"
-                class="form-checkbox"
-                checked
-              />
-              <span class="slider round"></span>
-            </label>
-          </div>
-
+      </div>
+      <h1 id="searchFormElementTitle">ADD NEW SEARCH FILTER</h1>
+      <form class="nice-form-group scrollbar">
+        <div>
+          <label for="searchName" class="form-label">Search Name:</label>
           <input
-            id="addNewSearchFilter"
-            type="submit"
-            value="Add new search filter"
-            class="last-element"
+            type="text"
+            id="searchName"
+            name="searchName"
+            class="form-input"
           />
-        </form>
-      </div>
-
-      <div
-        id="searchListElement"
-        class="search-list display-none display-none-last"
-      >
-        <div class="back-arrow-container">
-          <div title="Go back" class="backArrow" id="backSearchListButton">
-            &#10140;
-          </div>
         </div>
 
-        <h1>ACTIVE SEARCH FILTERS</h1>
-        <div id="fullActiveSearchListContainer">
-          <h2>There are no search filters set</h2>
+        <div>
+          <label for="origin" class="form-label">Origin:</label>
+          <input
+            type="text"
+            id="origin"
+            name="origin"
+            class="form-input"
+            placeholder="Search"
+          />
+          <ul id="origin-suggestion-list"></ul>
         </div>
-      </div>
 
-      <div id="blacklistControlElement" class="display-none display-none-last">
-        <div class="back-arrow-container">
-          <div title="Go back" class="backArrow" id="backArrowButton2">
-            &#10140;
-          </div>
-        </div>
-        <h1>Blacklist</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>N</th>
-              <th>Name</th>
-              <th>Address</th>
-            </tr>
-          </thead>
-          <tbody id="tableBody">
-            <tr>
-              <td></td>
-              <td>
-                <input
-                  type="text"
-                  placeholder="Name"
-                  id="addBlacklistItemNameInput"
-                />
-              </td>
-              <td>
-                <input
-                  type="text"
-                  placeholder="Address"
-                  id="addBlacklistItemAddressInput"
-                />
-              </td>
-              <td style="width: 24px; border: none">
-                <button class="add-row-btn" id="addRowButton">+</button>
-              </td>
-            </tr>
-            <tr>
-              <td>1</td>
-              <td>-</td>
-              <td>-</td>
-            </tr>
-            
-            
-          </tbody>
-        </table>
-      </div>
-
-      <div
-        id="controlElement"
-        class="searches-group display-none display-none-last"
-      >
-        <div id="sidebar">
-          <ul>
-            <li>
-              <a href="#" id="activeFiltersButton">Active search filters</a>
-            </li>
-            <li><a href="#" id="blacklistControlButton">Blacklist</a></li>
-            <li><a href="#" id="profileControlButton">Profile settings</a></li>
-          </ul>
-
-          <div id="sidebar-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-        <div class="control-title">Central Tracker</div>
-
-        <div class="loads-alert-container" id="loadsAlertContainer"></div>
-        <div class="plus-container">
-          <span
-            class="pulse-button"
-            id="addNewSearch"
-            title="Add new search filter"
-            >+</span
+        <div>
+          <label for="startRadius" class="form-label" id="startRadiusLabel"
+            >Start Radius (Miles):</label
           >
+          <input
+            type="number"
+            id="startRadius"
+            name="startRadius"
+            class="form-input"
+            placeholder="50"
+          />
         </div>
+
+        <div>
+          <label for="destination" class="form-label">Destination:</label>
+          <input
+            type="text"
+            id="destination"
+            name="destination"
+            class="form-input"
+            placeholder="Search"
+          />
+          <ul id="destination-suggestion-list"></ul>
+        </div>
+
+        <div>
+          <label for="endRadius" class="form-label">End Radius (Miles):</label>
+          <input
+            type="number"
+            id="endRadius"
+            name="endRadius"
+            class="form-input"
+            placeholder="50"
+          />
+
+          <ul id="stop-suggestion-list"></ul>
+        </div>
+
+        <div>
+          <label>Search Along Route</label>
+          <label for="searchAlongRoute" class="switch">
+            <input
+              type="checkbox"
+              id="searchAlongRoute"
+              name="searchAlongRoute"
+              class="form-checkbox"
+            />
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <!-- Vehicle Details -->
+        <div>
+          <label class="form-label">Vehicle Type:</label>
+          <div
+            id="dropdownChecklist"
+            class="dropdown-check-list"
+            tabindex="100"
+          >
+            <span class="anchor" id="vehiclesAnchor">All (Default)</span>
+            <ul class="items" id="vehicleTypesCheckboxList">
+              <li><input type="checkbox" id="pickupCheckbox" />Pickup</li>
+              <li><input type="checkbox" id="boatCheckbox" />Boat</li>
+              <li><input type="checkbox" id="rvCheckbox" />RV</li>
+              <li><input type="checkbox" id="carCheckbox" />Car</li>
+              <li><input type="checkbox" id="suvCheckbox" />SUV</li>
+              <li class="heavy">
+                <input type="checkbox" id="heavyCheckbox" />Heavy Equipment
+              </li>
+              <li>
+                <input type="checkbox" id="travelCheckbox" />Travel Trailer
+              </li>
+              <li><input type="checkbox" id="largeCheckbox" />Large Yacht</li>
+              <li><input type="checkbox" id="vanCheckbox" />Van</li>
+              <li>
+                <input type="checkbox" id="motorcycleCheckbox" />Motorcycle
+              </li>
+              <li><input type="checkbox" id="otherCheckbox" />Other</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <label for="trailerType" class="form-label">Trailer Type:</label>
+          <select id="trailerType" name="trailerType" class="form-select">
+            <option value="All">All (Default)</option>
+            <option value="OPEN">Open</option>
+            <option value="ENCLOSED">Enclosed</option>
+            <option value="DRIVEAWAY">Driveaway</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="vehicleStatus" class="form-label">Vehicle Status:</label>
+          <select id="vehicleStatus" name="vehicleStatus" class="form-select">
+            <option value="All">All (Default)</option>
+            <option value="OperableOnly">Operable</option>
+            <option value="HasInOperable">Inoperable</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="minNumVehicles" class="form-label"
+            >Min Number of Vehicles:</label
+          >
+          <select id="minNumVehicles" name="minNumVehicles" class="form-select">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="maxNumVehicles" class="form-label"
+            >Max Number of Vehicles</label
+          >
+          <select id="maxNumVehicles" name="maxNumVehicles" class="form-select">
+            <option value="all">All (Default)</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+        <!-- Delivery Details -->
+        <div>
+          <label for="deliveryDate" class="form-label">Delivery Date:</label>
+          <input
+            type="date"
+            id="deliveryDate"
+            name="deliveryDate"
+            class="form-input"
+          />
+        </div>
+
+        <div>
+          <label for="readyToShipWithin" class="form-label"
+            >Ready to Ship Within:</label
+          >
+          <select
+            id="readyToShipWithin"
+            name="readyToShipWithin"
+            class="form-select"
+          >
+            <option value="all">All (Default)</option>
+            <option value="1">1 day</option>
+            <option value="2">2 days</option>
+            <option value="3">3 days</option>
+            <option value="4">4 days</option>
+          </select>
+        </div>
+
+        <!-- Payment Details -->
+        <div>
+          <label for="paymentType" class="form-label">Payment Type:</label>
+          <select id="paymentType" name="paymentType" class="form-select">
+            <option value="all">All (Default)</option>
+            <option value="COD_COP">COD/COP</option>
+            <option value="COD_COP_QUICKPAY_COMCHEK">
+              COD/COP/Quickpay/Comcheck
+            </option>
+          </select>
+        </div>
+
+        <div>
+          <label for="minTotalPay" class="form-label">Min Total Pay $:</label>
+          <input
+            type="number"
+            id="minTotalPay"
+            name="minTotalPay"
+            class="form-input"
+          />
+        </div>
+
+        <div>
+          <label for="minRatePerMile" class="form-label"
+            >Min Rate per Vehicle per Mile $:</label
+          >
+          <input
+            type="number"
+            id="minRatePerMile"
+            name="minRatePerMile"
+            class="form-input"
+          />
+        </div>
+
+        <div>
+          <label>Blacklist</label>
+          <label for="blacklist" class="switch">
+            <input
+              type="checkbox"
+              id="blacklist"
+              name="blacklist"
+              class="form-checkbox"
+              checked
+            />
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <input
+          id="addNewSearchFilter"
+          type="submit"
+          value="Add new search filter"
+          class="last-element"
+        />
+      </form>
+    </div>
+
+    <div
+      id="searchListElement"
+      class="search-list display-none display-none-last"
+    >
+      <div class="back-arrow-container">
+        <div title="Go back" class="backArrow" id="backSearchListButton">
+          &#10140;
+        </div>
+      </div>
+
+      <h1>ACTIVE SEARCH FILTERS</h1>
+      <div id="fullActiveSearchListContainer">
+        <h2>There are no search filters set</h2>
+      </div>
+    </div>
+
+    <div id="blacklistControlElement" class="display-none display-none-last">
+      <div class="back-arrow-container">
+        <div title="Go back" class="backArrow" id="backArrowButton2">
+          &#10140;
+        </div>
+      </div>
+      <h1>Blacklist</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>N</th>
+            <th>Name</th>
+            <th>Address</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr>
+            <td></td>
+            <td>
+              <input
+                type="text"
+                placeholder="Name"
+                id="addBlacklistItemNameInput"
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                placeholder="Address"
+                id="addBlacklistItemAddressInput"
+              />
+            </td>
+            <td style="width: 24px; border: none">
+              <button class="add-row-btn" id="addRowButton">+</button>
+            </td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div
+      id="controlElement"
+      class="searches-group display-none display-none-last"
+    >
+      <div id="sidebar">
+        <ul>
+          <li>
+            <a href="#" id="activeFiltersButton">Active search filters</a>
+          </li>
+          <li><a href="#" id="blacklistControlButton">Blacklist</a></li>
+          <li><a href="#" id="profileControlButton">Profile settings</a></li>
+        </ul>
+
+        <div id="sidebar-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="control-title">Dispatch Tracker</div>
+      <div id="alertSettingsControlElement" class="alert-settings">
+        <div id="alertsFilter" class="alert-filter">
+          <select id="alertsFilterSelect">
+            <option value="all">Show All</option>
+          </select>
+        </div>
+        <div id="telegramControlElement" class="telegram-control">
+          <label class="toggle">
+            <input type="checkbox" id="telegramSwitch" />
+            <span class="labels" data-on="Telegram" data-off="Telegram"></span>
+          </label>
+          <div id="telegramPopup" class="telegram-popup">
+            <h3>TELEGRAM CONNECTION</h3>
+            <p>
+              Telegram connection will help you receive alerts from
+              DispatchTracker even when you are not sitting in front of the
+              computer. You can remove connection by sending /remove command to
+              the bot.
+            </p>
+            <p>
+              Please message <span>@DispatchTrackerBot</span> on telegram and
+              enter the verification code in the input below
+            </p>
+
+            <div id="verification-input">
+              <input />
+              <input />
+              <input />
+              <input />
+              <input />
+              <input />
+            </div>
+            <!-- <input id="telegramVerificationInput" type="text"> -->
+            <button id="telegramVerifyButton" class="btn btn-intermediate">
+              Verify
+            </button>
+          </div>
+        </div>
+        <div id="clearAllAlertsButton" class="clear-all-alerts">
+          <button id="clearAllAlertsButton">Clear alerts</button>
+        </div>
+      </div>
+
+      <div class="loads-alert-container" id="loadsAlertContainer"></div>
+      <div class="plus-container">
+        <span
+          class="pulse-button"
+          id="addNewSearch"
+          title="Add new search filter"
+          >+</span
+        >
       </div>
     </div>
 

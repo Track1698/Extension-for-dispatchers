@@ -4,3 +4,4 @@ obfuscate.bat
 /node_modules
 obfuscator-config.js
 /Development - Backup
+/.vscode
