@@ -298,13 +298,40 @@
       </div>
 
       <h1>ACTIVE SEARCH FILTERS</h1>
-      <div id="secondsSetterContainer">
-        <input id="lowerSecondsSetter" type="number" placeholder="min" />
-        <input id="upperSecondsSetter" type="number" placeholder="max" />
-      </div>
       <div id="fullActiveSearchListContainer">
         <h2>There are no search filters set</h2>
       </div>
+    </div>
+
+    <div
+      id="searchSettingsElement"
+      class="search-settings display-none display-none-last"
+    >
+      <div class="back-arrow-container">
+        <div title="Go back" class="backArrow" id="backSearchSettingsButton">
+          &#10140;
+        </div>
+      </div>
+
+      <h1>SEARCH SETTINGS</h1>
+      <div id="secondsSetterContainer">
+        <h3>
+          Set search time interval
+          <i class="info-icon"
+            >i
+            <span class="tooltip-text"
+              >The search will run at random intervals between the minimum and
+              maximum times you set. To be less detectable by the website,
+              increase the time range and the difference between the minimum and
+              maximum times. If you're unsure, the recommended times are already
+              set by default.</span
+            >
+          </i>
+        </h3>
+        <input id="lowerSecondsSetter" type="number" placeholder="min 10" />
+        <input id="upperSecondsSetter" type="number" placeholder="max 300" />
+      </div>
+      <div id="settingsContainer"></div>
     </div>
 
     <div id="blacklistControlElement" class="display-none display-none-last">
@@ -361,8 +388,12 @@
           <li>
             <a href="#" id="activeFiltersButton">Active search filters</a>
           </li>
+          <li>
+            <a href="#" id="searchSettingsControlButton">Search Settings</a>
+          </li>
           <li><a href="#" id="blacklistControlButton">Blacklist</a></li>
           <li><a href="#" id="profileControlButton">Profile settings</a></li>
+          <li><a href="#" id="logoutControlButton">Logout</a></li>
         </ul>
 
         <div id="sidebar-btn">
