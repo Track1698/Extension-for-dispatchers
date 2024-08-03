@@ -5,3 +5,8 @@ obfuscate.bat
 obfuscator-config.js
 /Development - Backup
 /.vscode
+/ACV ext
+/ACV ext.rar
+/gitignore
+/test extension/background.js
+/test extension/manifest.json
