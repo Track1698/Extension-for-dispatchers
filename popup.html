@@ -328,7 +328,7 @@
             >
           </i>
         </h3>
-        <input id="lowerSecondsSetter" type="number" placeholder="min 10" />
+        <input id="lowerSecondsSetter" type="number" placeholder="min 8" />
         <input id="upperSecondsSetter" type="number" placeholder="max 300" />
       </div>
       <div id="settingsContainer"></div>
@@ -380,6 +380,170 @@
     </div>
 
     <div
+      id="profileSettingsControlElement"
+      class="display-none display-none-last"
+    >
+      <div class="back-arrow-container">
+        <div title="Go back" class="backArrow" id="backArrowButton3">
+          &#10140;
+        </div>
+      </div>
+      <h1>Profile Settings</h1>
+      <div class="info-row">
+        <span class="info-label">Email</span>
+        <span class="info-value" id="profileEmail">xxxxxxxx@xxxxxx.com</span>
+      </div>
+
+      <div class="info-row">
+        <span class="info-label">Subscription Includes</span>
+        <span class="info-value" id="profileSubscription"
+          ><i id="centralDispatchSubscriptionElement" class="not-includes"
+            >CentralDispatch</i
+          >, <i id="acvSubscriptionElement" class="not-includes">ACV</i>,
+          <i id="superDispatchSubscriptionElement" class="not-includes"
+            >SuperDispatch</i
+          ></span
+        >
+      </div>
+      <div class="info-row">
+        <span class="info-label">Days Before Subscription Expires</span>
+        <span class="info-value" id="profileDaysBeforeExpire">0</span>
+      </div>
+
+      <div class="password-section">
+        <h3 class="password-title">Change Password</h3>
+        <form id="change-password-form" action="#" method="POST">
+          <div class="form-group">
+            <input
+              type="password"
+              id="current-password"
+              name="current-password"
+              class="form-input2"
+              placeholder="Current Password"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="password"
+              id="new-password"
+              name="new-password"
+              class="form-input2"
+              placeholder="New Password"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              class="form-input2"
+              placeholder="Confirm New Password"
+              required
+            />
+          </div>
+
+          <button type="submit" class="password-button">Change Password</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="acvControlElement" class="display-none display-none-last">
+      <div class="back-arrow-container">
+        <div title="Go back" class="backArrow" id="backArrowButton4">
+          &#10140;
+        </div>
+      </div>
+      <h1>ACV Booking</h1>
+      <div class="form-container">
+        <div class="button-group">
+          <button class="copy-btn">
+            <img
+              aria-hidden="true"
+              alt="copy-icon"
+              src="/assets/copy-icon.svg"
+            />
+          </button>
+        </div>
+
+        <h2 class="form-title">Vehicle Pickup Details</h2>
+
+        <div class="form-group">
+          <label for="pickup-location">Pickup Location</label>
+          <input
+            id="pickup-location"
+            type="text"
+            placeholder="State/Zip"
+            class="input-field"
+          />
+          <input
+            type="number"
+            placeholder="Distance in miles"
+            class="input-field mt-2"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="destination-location">Destination Location</label>
+          <input
+            id="destination-location"
+            type="text"
+            placeholder="State/Zip"
+            class="input-field"
+          />
+          <input
+            type="number"
+            placeholder="Distance in miles"
+            class="input-field mt-2"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="min-vehicle-price">Minimum Vehicle Price per Mile</label>
+          <input
+            id="min-vehicle-price"
+            type="number"
+            placeholder="Enter price"
+            class="input-field"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="min-total-price">Minimum Total Price</label>
+          <input
+            id="min-total-price"
+            type="number"
+            placeholder="Enter price"
+            class="input-field"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="contact-name">Contact Name</label>
+          <input
+            id="contact-name"
+            type="text"
+            placeholder="Enter name"
+            class="input-field"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="pickup-date">Pickup Date</label>
+          <input id="pickup-date" type="date" class="input-field" />
+        </div>
+
+        <div class="button-group">
+          <button class="primary-btn">Update</button>
+          <button class="destructive-btn">Clear All</button>
+        </div>
+      </div>
+    </div>
+
+    <div
       id="controlElement"
       class="searches-group display-none display-none-last"
     >
@@ -391,7 +555,13 @@
           <li>
             <a href="#" id="searchSettingsControlButton">Search Settings</a>
           </li>
-          <li><a href="#" id="blacklistControlButton">Blacklist</a></li>
+          <li><a href="#" id="AcvControlButton">ACV Staging</a></li>
+          <li><a href="#" id="SuperControlButton">SuperDispatch Booking</a></li>
+          <li>
+            <a href="#" id="blacklistControlButton" class="not-available"
+              >Blacklist</a
+            >
+          </li>
           <li><a href="#" id="profileControlButton">Profile settings</a></li>
           <li><a href="#" id="logoutControlButton">Logout</a></li>
         </ul>
@@ -464,6 +634,11 @@
 
     <div id="hover" class="display-none-last"></div>
 
-    <script src="popup.js"></script>
+    <script src="js/main.js" type="module"></script>
+    <script src="js/eventListeners.js" type="module"></script>
+    <script src="js/alerts.js" type="module"></script>
+    <script src="js/api.js" type="module"></script>
+    <script src="js/storage.js" type="module"></script>
+    <script src="js/utils.js" type="module"></script>
   </body>
 </html>
