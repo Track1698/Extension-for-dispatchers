@@ -459,86 +459,144 @@
       </div>
       <h1>ACV Booking</h1>
       <div class="form-container">
-        <div class="button-group">
-          <button class="copy-btn">
-            <img
-              aria-hidden="true"
-              alt="copy-icon"
-              src="/assets/copy-icon.svg"
+        <div class="tooltip-container">
+          <div class="icon">
+            <svg
+              id="Copy_24"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+            >
+              <rect
+                width="24"
+                height="24"
+                stroke="none"
+                fill="#000000"
+                opacity="0"
+              />
+              <g transform="matrix(1 0 0 1 12 12)">
+                <path
+                  style="
+                    stroke: none;
+                    stroke-width: 1;
+                    stroke-dasharray: none;
+                    stroke-linecap: butt;
+                    stroke-dashoffset: 0;
+                    stroke-linejoin: miter;
+                    stroke-miterlimit: 4;
+                    fill: rgb(255, 255, 255);
+                    fill-rule: nonzero;
+                    opacity: 1;
+                  "
+                  transform=" translate(-12, -12)"
+                  d="M 4 2 C 2.895 2 2 2.895 2 4 L 2 18 L 4 18 L 4 4 L 18 4 L 18 2 L 4 2 z M 8 6 C 6.895 6 6 6.895 6 8 L 6 20 C 6 21.105 6.895 22 8 22 L 20 22 C 21.105 22 22 21.105 22 20 L 22 8 C 22 6.895 21.105 6 20 6 L 8 6 z M 8 8 L 20 8 L 20 20 L 8 20 L 8 8 z"
+                  stroke-linecap="round"
+                />
+              </g>
+            </svg>
+          </div>
+          <div class="tooltip">
+            <p>Copy search details from CentralDispatch active search filter</p>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="pickup_state_zip">Pickup Location</label>
+          <input
+            id="pickup_state_zip"
+            type="text"
+            placeholder="State/Zip"
+            class="input-field"
+          />
+          <input
+            id="pickup_miles"
+            type="number"
+            placeholder="Radius (in miles)"
+            class="input-field"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="destination_state_zip">Destination Location</label>
+          <input
+            id="destination_state_zip"
+            type="text"
+            placeholder="State/Zip"
+            class="input-field"
+          />
+          <input
+            id="destination_miles"
+            type="number"
+            placeholder="Radius (in miles)"
+            class="input-field"
+          />
+        </div>
+
+        <!-- Two-column layout starts here -->
+        <div class="form-columns">
+          <div class="form-group">
+            <label for="price_per_km">Minimum Vehicle Price per Mile</label>
+            <input
+              id="price_per_km"
+              type="number"
+              placeholder="Enter price"
+              class="input-field"
             />
-          </button>
-        </div>
+          </div>
 
-        <h2 class="form-title">Vehicle Pickup Details</h2>
+          <div class="form-group">
+            <label for="price">Minimum Total Price</label>
+            <input
+              id="price"
+              type="number"
+              placeholder="Enter price"
+              class="input-field"
+            />
+          </div>
 
-        <div class="form-group">
-          <label for="pickup-location">Pickup Location</label>
-          <input
-            id="pickup-location"
-            type="text"
-            placeholder="State/Zip"
-            class="input-field"
-          />
-          <input
-            type="number"
-            placeholder="Distance in miles"
-            class="input-field mt-2"
-          />
-        </div>
+          <div class="form-group">
+            <label for="contact_name">Contact Name</label>
+            <input
+              id="contact_name"
+              type="text"
+              placeholder="Enter name"
+              class="input-field"
+            />
+          </div>
 
-        <div class="form-group">
-          <label for="destination-location">Destination Location</label>
-          <input
-            id="destination-location"
-            type="text"
-            placeholder="State/Zip"
-            class="input-field"
-          />
-          <input
-            type="number"
-            placeholder="Distance in miles"
-            class="input-field mt-2"
-          />
-        </div>
+          <div class="form-group">
+            <label for="pickup_date">Pickup Date</label>
+            <input id="pickup_date" type="date" class="input-field" />
+          </div>
 
-        <div class="form-group">
-          <label for="min-vehicle-price">Minimum Vehicle Price per Mile</label>
-          <input
-            id="min-vehicle-price"
-            type="number"
-            placeholder="Enter price"
-            class="input-field"
-          />
-        </div>
+          <div class="form-group">
+            <label for="max_stage_count">Max Staged Jobs</label>
+            <input
+              id="max_stage_count"
+              type="number"
+              placeholder="Enter max jobs"
+              class="input-field"
+            />
+          </div>
 
-        <div class="form-group">
-          <label for="min-total-price">Minimum Total Price</label>
-          <input
-            id="min-total-price"
-            type="number"
-            placeholder="Enter price"
-            class="input-field"
-          />
+          <div class="form-group">
+            <label>
+              <input
+                type="checkbox"
+                id="stage_current_postings"
+                class="checkbox-field"
+              />
+              Stage from Current Postings
+            </label>
+          </div>
         </div>
-
-        <div class="form-group">
-          <label for="contact-name">Contact Name</label>
-          <input
-            id="contact-name"
-            type="text"
-            placeholder="Enter name"
-            class="input-field"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="pickup-date">Pickup Date</label>
-          <input id="pickup-date" type="date" class="input-field" />
-        </div>
+        <!-- Two-column layout ends here -->
 
         <div class="button-group">
-          <button class="primary-btn">Update</button>
-          <button class="destructive-btn">Clear All</button>
+          <button class="primary-btn" id="acvSettingsUpdate">Update</button>
+          <button class="destructive-btn" id="acvClearAll">Clear All</button>
         </div>
       </div>
     </div>
@@ -640,5 +698,6 @@
     <script src="js/api.js" type="module"></script>
     <script src="js/storage.js" type="module"></script>
     <script src="js/utils.js" type="module"></script>
+    <script src="js/functwo.js" type="module"></script>
   </body>
 </html>
