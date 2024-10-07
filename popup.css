@@ -713,6 +713,7 @@ ul li a {
   width: 180px;
   padding: 10px;
   text-decoration: none;
+  font-size: 15px;
 }
 
 #sidebar-btn {
@@ -1629,6 +1630,11 @@ h1 {
   text-align: center;
 }
 
+#superControlElement {
+  width: 80%;
+  text-align: center;
+}
+
 .form-container {
   background-color: #262b3f;
   color: #fff;
@@ -1811,6 +1817,21 @@ h1 {
   width: 29%;
 }
 #pickup_miles {
+  width: 29%;
+}
+
+#destination_state_zip_super {
+  width: 70%;
+}
+
+#pickup_state_zip_super {
+  width: 70%;
+}
+
+#destination_miles_super {
+  width: 29%;
+}
+#pickup_miles_super {
   width: 29%;
 }
 
