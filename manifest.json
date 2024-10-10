@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "DispatchTracker",
-  "version": "1.1",
+  "version": "1.2",
   "description": "This extension will help you with CentralDispatch, ACV and SuperDispatch to book a job easier",
   "permissions": [
     "webRequest",
