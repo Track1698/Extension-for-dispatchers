@@ -432,6 +432,16 @@ body {
   margin-top: 11px;
 }
 
+.popout-container {
+  position: absolute;
+  width: 200px;
+  margin: 0 auto 0;
+  -webkit-perspective: 1000;
+  -webkit-backface-visibility: hidden;
+  left: 675px;
+  margin-top: 13px;
+}
+
 .pulse-button {
   position: relative;
   display: block;
@@ -450,6 +460,10 @@ body {
   cursor: pointer;
   box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.171);
   -webkit-animation: pulse 2s 1;
+}
+#popoutButton {
+  font-family: "Material Symbols Outlined";
+  font-size: 20px;
 }
 
 .pulse-button:hover {
