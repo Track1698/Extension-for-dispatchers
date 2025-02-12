@@ -1,0 +1,8 @@
+.text-left {
+  text-align: left;
+}
+
+.selected-card {
+  background-color: #f0f8ff;
+  border-color: #007bff;
+}

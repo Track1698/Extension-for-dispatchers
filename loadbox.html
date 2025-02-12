@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link href="./loadbox.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main class="w-full flex flex-col lg:flex-row">
+      <div class="w-full lg:w-2/5 bg-gray-100">
+        <div class="flex flex-col">
+          <div
+            class="flex justify-between items-center py-5 pl-10 pr-5 relative"
+          >
+            <h2 class="font-bold text-lg">Load Inbox</h2>
+            <div class="relative">
+              <!-- Dots Button -->
+              <div
+                class="flex items-center justify-center px-3 py-2 rounded-md bg-white cursor-pointer"
+                id="menu-button"
+              >
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+
+              <!-- Dropdown Menu -->
+              <div
+                id="menu"
+                class="absolute right-0 mt-2 w-40 bg-white border border-gray-300 rounded-md shadow-lg hidden z-10"
+              >
+                <ul class="py-2">
+                  <li
+                    class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"
+                    id="delete-all"
+                  >
+                    Delete All
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- tabs -->
+          <div>
+            <div class="flex gap-10 border-gray-300 px-5">
+              <button
+                class="flex-1 pb-6 pt-2 text-center border-b-2 border-transparent focus:outline-none active-tab"
+                data-tab="all"
+              >
+                All
+                <span
+                  class="rounded-3xl bg-gray-300 px-3 py-1 text-black text-sm ml-1"
+                  >277</span
+                >
+              </button>
+
+              <button
+                class="flex-1 pb-6 pt-2 text-center border-b-2 border-transparent focus:outline-none"
+                data-tab="starred"
+              >
+                Starred
+                <span
+                  class="rounded-3xl bg-gray-300 px-3 py-1 text-black text-sm ml-1"
+                  >4</span
+                >
+              </button>
+              <button
+                class="flex-1 pb-6 pt-2 text-center border-b-2 border-transparent focus:outline-none"
+                data-tab="deleted"
+              >
+                Recently Deleted
+              </button>
+            </div>
+            <div
+              id="tab-content"
+              class="h-[100vh] overflow-y-auto custom-scrollbar overflow-x-hidden px-5 text-gray-700"
+            >
+              All items are shown here.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right-side container for details -->
+      <div
+        id="details-container"
+        class="w-full lg:w-3/5 hidden h-[100vh] overflow-y-auto overflow-x-hidden lg:block no-scrollbar"
+      ></div>
+    </main>
+
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
