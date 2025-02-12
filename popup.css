@@ -96,7 +96,10 @@ body {
   background: #03e9f4;
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #03e9f4, 0 0 25px #03e9f4, 0 0 50px #03e9f4,
+  box-shadow:
+    0 0 5px #03e9f4,
+    0 0 25px #03e9f4,
+    0 0 50px #03e9f4,
     0 0 100px #03e9f4;
 }
 
@@ -185,7 +188,7 @@ body {
 }
 
 .nice-form-group {
-  width: 95%;
+  width: 570px;
   max-width: 570px;
   margin: 0 auto;
   padding: 15px;
@@ -196,7 +199,6 @@ body {
   justify-items: stretch;
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-auto-rows: minmax(14, 14);
   gap: 20px;
 }
 
@@ -400,8 +402,17 @@ body {
       color: #50f0d0;
       background: currentColor;
       border-radius: 50%;
-      box-shadow: 0 0 10px, 0 0 20px, 0 0 30px, 0 0 40px, 0 0 50px, 0 0 60px,
-        0 0 70px, 0 0 80px, 0 0 90px, 0 0 100px;
+      box-shadow:
+        0 0 10px,
+        0 0 20px,
+        0 0 30px,
+        0 0 40px,
+        0 0 50px,
+        0 0 60px,
+        0 0 70px,
+        0 0 80px,
+        0 0 90px,
+        0 0 100px;
       z-index: 10;
     }
 
@@ -934,6 +945,19 @@ th {
   width: 228px;
 }
 
+.dropdown-check-list.visible .website-dropdown {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  position: absolute;
+  z-index: 11;
+  background-color: white;
+  color: black;
+  font-size: 2vw;
+  align-items: start;
+  justify-content: center;
+  width: 522px;
+}
+
 .dropdown-check-list.visible .heavy {
   font-size: 1.4vw;
 }
@@ -1011,7 +1035,10 @@ li.checked {
   opacity: 0;
   line-height: 1;
   padding: 0;
-  transition: right 400ms, opacity 400ms, line-height 300ms 100ms,
+  transition:
+    right 400ms,
+    opacity 400ms,
+    line-height 300ms 100ms,
     padding 300ms 100ms;
   display: table;
 }
@@ -1026,7 +1053,10 @@ li.checked {
   opacity: 1;
   line-height: 2;
   padding: 3px 15px;
-  transition: line-height 200ms, padding 200ms, right 350ms 200ms,
+  transition:
+    line-height 200ms,
+    padding 200ms,
+    right 350ms 200ms,
     opacity 350ms 200ms;
 }
 
@@ -1747,7 +1777,9 @@ h1 {
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
 }
 
 /* SVG Animation: Rotate and scale effect */
@@ -1773,7 +1805,9 @@ h1 {
   left: 50%;
   margin-left: -100px; /* Center the tooltip */
   opacity: 0;
-  transition: opacity 0.5s, transform 0.5s;
+  transition:
+    opacity 0.5s,
+    transform 0.5s;
   transform: translateY(10px);
 }
 
@@ -1874,6 +1908,10 @@ h1 {
   transform: translateX(50%);
 }
 
+.label-for-alerts.central {
+  background: #ff821c;
+}
+
 /* General button styles */
 .save-button {
   position: absolute;
@@ -1884,7 +1922,9 @@ h1 {
   font-weight: 500;
   cursor: pointer;
   padding: 5px 10px;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
   right: 57px;
   margin-top: -17px;
 }
@@ -1922,11 +1962,190 @@ h1 {
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 /* Hover effect */
 .save-button:hover .hover-text {
   opacity: 1;
   transform: translateX(-50%) translateY(-3px); /* Slight lift effect */
+}
+
+.admin-panel-form-group {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.admin-panel-label {
+  font-weight: bold;
+  text-align: right;
+}
+
+.admin-panel-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.admin-panel-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.admin-panel-test-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.admin-panel-button {
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  transition: background 0.3s;
+}
+
+.admin-panel-button:hover {
+  background-color: #0056b3;
+}
+
+.additional-parameters-grid-container {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  justify-items: stretch;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-auto-rows: minmax(14, 14);
+  gap: 20px;
+}
+
+.additional-parameters-grid-container :nth-child(1) {
+  grid-column: span 2;
+}
+
+/* Style the details container */
+details {
+  background-color: #1f2535;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+  color: #ffffff;
+  grid-column: span 4;
+}
+
+details:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Remove default marker and style summary */
+details summary {
+  list-style: none; /* Remove default triangle */
+  cursor: pointer;
+  position: relative;
+  padding-left: 1.5em;
+  font-weight: bold;
+  outline: none;
+  display: block;
+}
+
+/* Create a custom arrow marker with animation */
+details summary::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: transform 0.3s ease;
+}
+
+details[open] summary ~ * {
+  animation: sweep 0.5s ease-in-out;
+}
+
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    margin-left: 10px;
+  }
+  100% {
+    opacity: 1;
+    margin-left: 18px;
+  }
+}
+
+#websiteList {
+  grid-column: span 4;
+}
+
+.button-search {
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family:
+    system-ui,
+    -apple-system,
+    system-ui,
+    "Helvetica Neue",
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  justify-content: center;
+  line-height: 1.25;
+  padding: calc(0.275rem - 1px) calc(0.5rem - 1px);
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+  height: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.button-search:hover,
+.button-search:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.button-search:hover {
+  transform: translateY(-1px);
+}
+
+.button-search:active {
+  background-color: #f0f0f1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-size: 20px;
 }

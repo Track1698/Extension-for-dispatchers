@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -53,7 +53,7 @@
           />
         </div>
 
-        <div>
+        <div class="input-group">
           <label for="origin" class="form-label">Origin:</label>
           <input
             type="text"
@@ -62,11 +62,49 @@
             class="form-input"
             placeholder="Search"
           />
-          <ul id="origin-suggestion-list"></ul>
+          <ul id="origin-suggestion-list" class="display-none"></ul>
+          <div class="button-group">
+            <button id="add-origin" type="button" class="button-search">
+              Add Origin
+            </button>
+            <button id="clear-origin" type="button" class="button-search">
+              Clear Origins
+            </button>
+          </div>
+        </div>
+        <div>
+          <h3>Added Origins:</h3>
+          <ul id="origin-added-list" class="added-list"></ul>
         </div>
 
+        <!-- Destination Section -->
+        <div class="input-group">
+          <label for="destination" class="form-label">Destination:</label>
+          <input
+            type="text"
+            id="destination"
+            name="destination"
+            class="form-input"
+            placeholder="Search"
+          />
+          <ul id="destination-suggestion-list" class="display-none"></ul>
+          <div class="button-group">
+            <button id="add-destination" type="button" class="button-search">
+              Add Destination
+            </button>
+            <button id="clear-destination" type="button" class="button-search">
+              Clear Destinations
+            </button>
+          </div>
+        </div>
         <div>
-          <label for="startRadius" class="form-label" id="startRadiusLabel"
+          <h3>Added Destinations:</h3>
+          <ul id="destination-added-list" class="added-list"></ul>
+        </div>
+
+        <!-- Optional: Additional inputs like radius -->
+        <div class="input-group">
+          <label for="startRadius" class="form-label"
             >Start Radius (Miles):</label
           >
           <input
@@ -77,20 +115,7 @@
             placeholder="50"
           />
         </div>
-
-        <div>
-          <label for="destination" class="form-label">Destination:</label>
-          <input
-            type="text"
-            id="destination"
-            name="destination"
-            class="form-input"
-            placeholder="Search"
-          />
-          <ul id="destination-suggestion-list"></ul>
-        </div>
-
-        <div>
+        <div class="input-group">
           <label for="endRadius" class="form-label">End Radius (Miles):</label>
           <input
             type="number"
@@ -99,147 +124,6 @@
             class="form-input"
             placeholder="50"
           />
-
-          <ul id="stop-suggestion-list"></ul>
-        </div>
-
-        <div>
-          <label>Search Along Route</label>
-          <label for="searchAlongRoute" class="switch">
-            <input
-              type="checkbox"
-              id="searchAlongRoute"
-              name="searchAlongRoute"
-              class="form-checkbox"
-            />
-            <span class="slider round"></span>
-          </label>
-        </div>
-
-        <!-- Vehicle Details -->
-        <div>
-          <label class="form-label">Vehicle Type:</label>
-          <div
-            id="dropdownChecklist"
-            class="dropdown-check-list"
-            tabindex="100"
-          >
-            <span class="anchor" id="vehiclesAnchor">All (Default)</span>
-            <ul class="items" id="vehicleTypesCheckboxList">
-              <li><input type="checkbox" id="pickupCheckbox" />Pickup</li>
-              <li><input type="checkbox" id="boatCheckbox" />Boat</li>
-              <li><input type="checkbox" id="rvCheckbox" />RV</li>
-              <li><input type="checkbox" id="carCheckbox" />Car</li>
-              <li><input type="checkbox" id="suvCheckbox" />SUV</li>
-              <li class="heavy">
-                <input type="checkbox" id="heavyCheckbox" />Heavy Equipment
-              </li>
-              <li>
-                <input type="checkbox" id="travelCheckbox" />Travel Trailer
-              </li>
-              <li><input type="checkbox" id="largeCheckbox" />Large Yacht</li>
-              <li><input type="checkbox" id="vanCheckbox" />Van</li>
-              <li>
-                <input type="checkbox" id="motorcycleCheckbox" />Motorcycle
-              </li>
-              <li><input type="checkbox" id="otherCheckbox" />Other</li>
-            </ul>
-          </div>
-        </div>
-
-        <div>
-          <label for="trailerType" class="form-label">Trailer Type:</label>
-          <select id="trailerType" name="trailerType" class="form-select">
-            <option value="All">All (Default)</option>
-            <option value="OPEN">Open</option>
-            <option value="ENCLOSED">Enclosed</option>
-            <option value="DRIVEAWAY">Driveaway</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="vehicleStatus" class="form-label">Vehicle Status:</label>
-          <select id="vehicleStatus" name="vehicleStatus" class="form-select">
-            <option value="All">All (Default)</option>
-            <option value="OperableOnly">Operable</option>
-            <option value="HasInOperable">Inoperable</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="minNumVehicles" class="form-label"
-            >Min Number of Vehicles:</label
-          >
-          <select id="minNumVehicles" name="minNumVehicles" class="form-select">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="maxNumVehicles" class="form-label"
-            >Max Number of Vehicles</label
-          >
-          <select id="maxNumVehicles" name="maxNumVehicles" class="form-select">
-            <option value="all">All (Default)</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </div>
-        <!-- Delivery Details -->
-        <div>
-          <label for="deliveryDate" class="form-label">Delivery Date:</label>
-          <input
-            type="date"
-            id="deliveryDate"
-            name="deliveryDate"
-            class="form-input"
-          />
-        </div>
-
-        <div>
-          <label for="readyToShipWithin" class="form-label"
-            >Ready to Ship Within:</label
-          >
-          <select
-            id="readyToShipWithin"
-            name="readyToShipWithin"
-            class="form-select"
-          >
-            <option value="all">All (Default)</option>
-            <option value="1">1 day</option>
-            <option value="2">2 days</option>
-            <option value="3">3 days</option>
-            <option value="4">4 days</option>
-          </select>
-        </div>
-
-        <!-- Payment Details -->
-        <div>
-          <label for="paymentType" class="form-label">Payment Type:</label>
-          <select id="paymentType" name="paymentType" class="form-select">
-            <option value="all">All (Default)</option>
-            <option value="COD_COP">COD/COP</option>
-            <option value="COD_COP_QUICKPAY_COMCHEK">
-              COD/COP/Quickpay/Comcheck
-            </option>
-          </select>
         </div>
 
         <div>
@@ -253,9 +137,9 @@
         </div>
 
         <div>
-          <label for="minRatePerMile" class="form-label"
-            >Min Rate per Mile:</label
-          >
+          <label for="minRatePerMile" class="form-label">
+            Min Rate per Mile:
+          </label>
           <input
             type="number"
             id="minRatePerMile"
@@ -264,19 +148,243 @@
           />
         </div>
 
-        <div>
-          <label>Blacklist</label>
-          <label for="blacklist" class="switch">
-            <input
-              type="checkbox"
-              id="blacklist"
-              name="blacklist"
-              class="form-checkbox"
-              checked
-            />
-            <span class="slider round"></span>
-          </label>
+        <div id="websiteList">
+          <label class="form-label">Searching Websites</label>
+          <div
+            id="dropdownChecklistWebsites"
+            class="dropdown-check-list"
+            tabindex="100"
+          >
+            <span class="anchor" id="websitesAnchor">All (Default)</span>
+            <ul class="items website-dropdown" id="websitesCheckboxList">
+              <li>
+                <input
+                  type="checkbox"
+                  id="centralWebsiteCheckbox"
+                  value="main"
+                />CentralDispatch
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="superWebsiteCheckbox"
+                  value="super"
+                />SuperDispatch
+              </li>
+              <li>
+                <input type="checkbox" id="acvWebsiteCeckbox" value="acv" />ACV
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="carsarriveWebsiteCheckbox"
+                  value="carsarrive"
+                />CarsArrive
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="autosledWebsiteCheckbox"
+                  value="autosled"
+                />Autosled
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="runbuggyWebsiteCheckbox"
+                  value="runbuggy"
+                />RunBuggy
+              </li>
+              <li>
+                <input
+                  type="checkbox"
+                  id="asertusWebsiteCheckbox"
+                  value="asertus"
+                />Asertus
+              </li>
+            </ul>
+          </div>
         </div>
+
+        <!-- Collapsible Section for Additional Fields -->
+        <details>
+          <summary>Additional Settings</summary>
+
+          <!-- Search Along Route -->
+          <div class="additional-parameters-grid-container">
+            <!-- <div>
+              <label>Search Along Route</label>
+              <label for="searchAlongRoute" class="switch">
+                <input
+                  type="checkbox"
+                  id="searchAlongRoute"
+                  name="searchAlongRoute"
+                  class="form-checkbox"
+                />
+                <span class="slider round"></span>
+              </label>
+            </div> -->
+
+            <!-- Vehicle Details -->
+            <div>
+              <label class="form-label">Vehicle Type:</label>
+              <div
+                id="dropdownChecklist"
+                class="dropdown-check-list"
+                tabindex="100"
+              >
+                <span class="anchor" id="vehiclesAnchor">All (Default)</span>
+                <ul class="items" id="vehicleTypesCheckboxList">
+                  <li><input type="checkbox" id="pickupCheckbox" />Pickup</li>
+                  <li><input type="checkbox" id="boatCheckbox" />Boat</li>
+                  <li><input type="checkbox" id="rvCheckbox" />RV</li>
+                  <li><input type="checkbox" id="carCheckbox" />Car</li>
+                  <li><input type="checkbox" id="suvCheckbox" />SUV</li>
+                  <li class="heavy">
+                    <input type="checkbox" id="heavyCheckbox" />Heavy Equipment
+                  </li>
+                  <li>
+                    <input type="checkbox" id="travelCheckbox" />Travel Trailer
+                  </li>
+                  <li>
+                    <input type="checkbox" id="largeCheckbox" />Large Yacht
+                  </li>
+                  <li><input type="checkbox" id="vanCheckbox" />Van</li>
+                  <li>
+                    <input type="checkbox" id="motorcycleCheckbox" />Motorcycle
+                  </li>
+                  <li><input type="checkbox" id="otherCheckbox" />Other</li>
+                </ul>
+              </div>
+            </div>
+
+            <div>
+              <label for="trailerType" class="form-label">Trailer Type:</label>
+              <select id="trailerType" name="trailerType" class="form-select">
+                <option value="OPEN">Open (Default)</option>
+                <option value="All">All</option>
+                <option value="ENCLOSED">Enclosed</option>
+                <option value="DRIVEAWAY">Driveaway</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="vehicleStatus" class="form-label"
+                >Vehicle Status:</label
+              >
+              <select
+                id="vehicleStatus"
+                name="vehicleStatus"
+                class="form-select"
+              >
+                <option value="All">All (Default)</option>
+                <option value="OperableOnly">Operable</option>
+                <option value="HasInOperable">Inoperable</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="minNumVehicles" class="form-label">
+                Min Number of Vehicles:
+              </label>
+              <select
+                id="minNumVehicles"
+                name="minNumVehicles"
+                class="form-select"
+              >
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="maxNumVehicles" class="form-label">
+                Max Number of Vehicles:
+              </label>
+              <select
+                id="maxNumVehicles"
+                name="maxNumVehicles"
+                class="form-select"
+              >
+                <option value="all">All (Default)</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
+
+            <!-- Delivery Details -->
+            <div>
+              <label for="deliveryDate" class="form-label"
+                >Delivery Date:</label
+              >
+              <input
+                type="date"
+                id="deliveryDate"
+                name="deliveryDate"
+                class="form-input"
+              />
+            </div>
+
+            <div>
+              <label for="readyToShipWithin" class="form-label">
+                Ready to Ship Within:
+              </label>
+              <select
+                id="readyToShipWithin"
+                name="readyToShipWithin"
+                class="form-select"
+              >
+                <option value="all">All (Default)</option>
+                <option value="1">1 day</option>
+                <option value="2">2 days</option>
+                <option value="3">3 days</option>
+                <option value="4">4 days</option>
+              </select>
+            </div>
+
+            <!-- Payment Details -->
+            <div>
+              <label for="paymentType" class="form-label">Payment Type:</label>
+              <select id="paymentType" name="paymentType" class="form-select">
+                <option value="all">All (Default)</option>
+                <option value="COD_COP">COD/COP</option>
+                <option value="COD_COP_QUICKPAY_COMCHEK">
+                  COD/COP/Quickpay/Comcheck
+                </option>
+              </select>
+            </div>
+
+            <!-- <div>
+              <label>Blacklist</label>
+              <label for="blacklist" class="switch">
+                <input
+                  type="checkbox"
+                  id="blacklist"
+                  name="blacklist"
+                  class="form-checkbox"
+                  checked
+                />
+                <span class="slider round"></span>
+              </label>
+            </div> -->
+          </div>
+        </details>
 
         <input
           id="addNewSearchFilter"
@@ -314,23 +422,7 @@
       </div>
 
       <h1>SEARCH SETTINGS</h1>
-      <div id="secondsSetterContainer">
-        <h3>
-          Set search time interval
-          <i class="info-icon"
-            >i
-            <span class="tooltip-text"
-              >The search will run at random intervals between the minimum and
-              maximum times you set. To be less detectable by the website,
-              increase the time range and the difference between the minimum and
-              maximum times. If you're unsure, the recommended times are already
-              set by default.</span
-            >
-          </i>
-        </h3>
-        <input id="lowerSecondsSetter" type="number" placeholder="min 8" />
-        <input id="upperSecondsSetter" type="number" placeholder="max 300" />
-      </div>
+
       <div id="settingsContainer"></div>
     </div>
 
@@ -377,6 +469,72 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <div id="adminPanelControlElement" class="display-none display-none-last">
+      <div class="back-arrow-container">
+        <div title="Go back" class="backArrow" id="backArrowButton2">
+          &#10140;
+        </div>
+      </div>
+
+      <h1>Admin Panel</h1>
+
+      <div class="admin-panel-form-group">
+        <label class="admin-panel-label" for="email">Email:</label>
+        <input type="email" id="email" class="admin-panel-input" />
+      </div>
+      <div class="admin-panel-form-group">
+        <label class="admin-panel-label" for="password">Password:</label>
+        <input type="password" id="password" class="admin-panel-input" />
+      </div>
+      <div class="admin-panel-form-group">
+        <label class="admin-panel-label" for="accountType">Account Type:</label>
+        <input type="text" id="accountType" class="admin-panel-input" />
+      </div>
+      <div class="admin-panel-form-group">
+        <label class="admin-panel-label" for="companyName">Company Name:</label>
+        <input type="text" id="companyName" class="admin-panel-input" />
+      </div>
+      <div class="admin-panel-form-group">
+        <label class="admin-panel-label" for="expireDate">Expire Date:</label>
+        <input type="date" id="expireDate" class="admin-panel-input" />
+      </div>
+      <div class="admin-panel-form-group">
+        <label class="admin-panel-label" for="mc">MC:</label>
+        <input type="text" id="mc" class="admin-panel-input" />
+      </div>
+      <div class="admin-panel-form-group">
+        <label class="admin-panel-label" for="subscriptions"
+          >Subscriptions:</label
+        >
+        <input type="text" id="subscriptions" class="admin-panel-input" />
+      </div>
+
+      <div class="admin-panel-buttons">
+        <button class="admin-panel-button">Load User</button>
+        <button class="admin-panel-button">Load Default Values</button>
+        <button class="admin-panel-button">Save</button>
+      </div>
+
+      <h3>Test Buttons</h3>
+      <div class="admin-panel-test-buttons">
+        <button class="admin-panel-button" id="testFunction1Button">
+          Test1
+        </button>
+        <button class="admin-panel-button" id="testFunction2Button">
+          Test2
+        </button>
+        <button class="admin-panel-button" id="testFunction3Button">
+          Test3
+        </button>
+        <button class="admin-panel-button" id="testFunction4Button">
+          Test4
+        </button>
+        <button class="admin-panel-button" id="testFunction5Button">
+          Test5
+        </button>
+      </div>
     </div>
 
     <div
@@ -451,292 +609,6 @@
       </div>
     </div>
 
-    <div id="acvControlElement" class="display-none display-none-last">
-      <div class="back-arrow-container">
-        <div title="Go back" class="backArrow" id="backArrowButton4">
-          &#10140;
-        </div>
-      </div>
-      <h1>ACV Booking</h1>
-      <div class="form-container">
-        <div class="tooltip-container">
-          <div class="icon">
-            <svg
-              id="Copy_24"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-            >
-              <rect
-                width="24"
-                height="24"
-                stroke="none"
-                fill="#000000"
-                opacity="0"
-              />
-              <g transform="matrix(1 0 0 1 12 12)">
-                <path
-                  style="
-                    stroke: none;
-                    stroke-width: 1;
-                    stroke-dasharray: none;
-                    stroke-linecap: butt;
-                    stroke-dashoffset: 0;
-                    stroke-linejoin: miter;
-                    stroke-miterlimit: 4;
-                    fill: rgb(255, 255, 255);
-                    fill-rule: nonzero;
-                    opacity: 1;
-                  "
-                  transform=" translate(-12, -12)"
-                  d="M 4 2 C 2.895 2 2 2.895 2 4 L 2 18 L 4 18 L 4 4 L 18 4 L 18 2 L 4 2 z M 8 6 C 6.895 6 6 6.895 6 8 L 6 20 C 6 21.105 6.895 22 8 22 L 20 22 C 21.105 22 22 21.105 22 20 L 22 8 C 22 6.895 21.105 6 20 6 L 8 6 z M 8 8 L 20 8 L 20 20 L 8 20 L 8 8 z"
-                  stroke-linecap="round"
-                />
-              </g>
-            </svg>
-          </div>
-          <div class="tooltip">
-            <p>Copy search details from CentralDispatch active search filter</p>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="pickup_state_zip">Pickup Location (Required)</label>
-          <input
-            id="pickup_state_zip"
-            type="text"
-            placeholder="State/Zip"
-            class="input-field"
-          />
-          <input
-            id="pickup_miles"
-            type="number"
-            placeholder="Radius (in miles)"
-            class="input-field"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="destination_state_zip">Destination Location</label>
-          <input
-            id="destination_state_zip"
-            type="text"
-            placeholder="State/Zip"
-            class="input-field"
-          />
-          <input
-            id="destination_miles"
-            type="number"
-            placeholder="Radius (in miles)"
-            class="input-field"
-          />
-        </div>
-
-        <!-- Two-column layout starts here -->
-        <div class="form-columns">
-          <div class="form-group">
-            <label for="price_per_km">Minimum Rate Per Mile</label>
-            <input
-              id="price_per_km"
-              type="number"
-              placeholder="Enter price"
-              class="input-field"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="price">Minimum Total Price</label>
-            <input
-              id="price"
-              type="number"
-              placeholder="Enter price"
-              class="input-field"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="max_stage_count">Max Staged Jobs</label>
-            <input
-              id="max_stage_count"
-              type="number"
-              placeholder="Enter max jobs"
-              class="input-field"
-            />
-          </div>
-          <div class="form-group">
-            <label>
-              <input
-                type="checkbox"
-                id="stage_current_postings_acv"
-                class="checkbox-field"
-              />
-              Stage from Current Postings
-            </label>
-          </div>
-        </div>
-        <!-- Two-column layout ends here -->
-
-        <div class="button-group">
-          <button class="primary-btn" id="acvSettingsUpdate">Update</button>
-          <button class="destructive-btn" id="acvClearAll">Clear All</button>
-        </div>
-      </div>
-    </div>
-
-    <div id="superControlElement" class="display-none display-none-last">
-      <div class="back-arrow-container">
-        <div title="Go back" class="backArrow" id="backArrowButton5">
-          &#10140;
-        </div>
-      </div>
-      <h1>SuperDispatch Booking</h1>
-      <div class="form-container">
-        <div class="tooltip-container">
-          <div class="icon">
-            <svg
-              id="Copy_25"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-            >
-              <rect
-                width="24"
-                height="24"
-                stroke="none"
-                fill="#000000"
-                opacity="0"
-              />
-              <g transform="matrix(1 0 0 1 12 12)">
-                <path
-                  style="
-                    stroke: none;
-                    stroke-width: 1;
-                    stroke-dasharray: none;
-                    stroke-linecap: butt;
-                    stroke-dashoffset: 0;
-                    stroke-linejoin: miter;
-                    stroke-miterlimit: 4;
-                    fill: rgb(255, 255, 255);
-                    fill-rule: nonzero;
-                    opacity: 1;
-                  "
-                  transform=" translate(-12, -12)"
-                  d="M 4 2 C 2.895 2 2 2.895 2 4 L 2 18 L 4 18 L 4 4 L 18 4 L 18 2 L 4 2 z M 8 6 C 6.895 6 6 6.895 6 8 L 6 20 C 6 21.105 6.895 22 8 22 L 20 22 C 21.105 22 22 21.105 22 20 L 22 8 C 22 6.895 21.105 6 20 6 L 8 6 z M 8 8 L 20 8 L 20 20 L 8 20 L 8 8 z"
-                  stroke-linecap="round"
-                />
-              </g>
-            </svg>
-          </div>
-          <div class="tooltip">
-            <p>Copy search details from CentralDispatch active search filter</p>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="pickup_state_zip">Pickup Location (Required)</label>
-          <input
-            id="pickup_state_zip_super"
-            type="text"
-            placeholder="State/Zip"
-            class="input-field"
-          />
-          <input
-            id="pickup_miles_super"
-            type="number"
-            placeholder="Radius (in miles)"
-            class="input-field"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="destination_state_zip_super">Destination Location</label>
-          <input
-            id="destination_state_zip_super"
-            type="text"
-            placeholder="State/Zip"
-            class="input-field"
-          />
-          <input
-            id="destination_miles_super"
-            type="number"
-            placeholder="Radius (in miles)"
-            class="input-field"
-          />
-        </div>
-
-        <!-- Two-column layout starts here -->
-        <div class="form-columns">
-          <div class="form-group">
-            <label for="price_per_km_super"
-              >Minimum Vehicle Price per Mile</label
-            >
-            <input
-              id="price_per_km_super"
-              type="number"
-              placeholder="Enter price"
-              class="input-field"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="price_super">Minimum Total Price</label>
-            <input
-              id="price_super"
-              type="number"
-              placeholder="Enter price"
-              class="input-field"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="contact_name_super">Contact Name</label>
-            <input
-              id="contact_name_super"
-              type="text"
-              placeholder="Enter name"
-              class="input-field"
-            />
-          </div>
-
-          <div class="form-group">
-            <label for="pickup_date_super">Pickup Date</label>
-            <input id="pickup_date_super" type="date" class="input-field" />
-          </div>
-
-          <div class="form-group">
-            <label for="max_stage_count_super">Max Staged Jobs</label>
-            <input
-              id="max_stage_count_super"
-              type="number"
-              placeholder="Enter max jobs"
-              class="input-field"
-            />
-          </div>
-
-          <div class="form-group">
-            <label>
-              <input
-                type="checkbox"
-                id="stage_current_postings_super"
-                class="checkbox-field"
-              />
-              Stage from Current Postings
-            </label>
-          </div>
-        </div>
-        <!-- Two-column layout ends here -->
-
-        <div class="button-group">
-          <button class="primary-btn" id="superSettingsUpdate">Update</button>
-          <button class="destructive-btn" id="superClearAll">Clear All</button>
-        </div>
-      </div>
-    </div>
-
     <div
       id="controlElement"
       class="searches-group display-none display-none-last"
@@ -747,10 +619,10 @@
             <a href="#" id="activeFiltersButton">Active search filters</a>
           </li>
           <li>
-            <a href="#" id="searchSettingsControlButton">Search Settings</a>
+            <a href="#" id="searchSettingsControlButton" class="not-available"
+              >Search Settings</a
+            >
           </li>
-          <li><a href="#" id="acvControlButton">ACV Staging</a></li>
-          <li><a href="#" id="superControlButton">SuperDispatch Booking</a></li>
           <li>
             <a href="#" id="turnOffControlButton">Turn off active searches</a>
           </li>
@@ -760,6 +632,9 @@
             >
           </li>
           <li><a href="#" id="profileControlButton">Profile settings</a></li>
+          <li id="adminPanelLiElement">
+            <a href="#" id="adminPanelControlButton">Admin Panel</a>
+          </li>
           <li><a href="#" id="logoutControlButton">Logout</a></li>
         </ul>
 
@@ -847,6 +722,5 @@
     <script src="js/api.js" type="module"></script>
     <script src="js/storage.js" type="module"></script>
     <script src="js/utils.js" type="module"></script>
-    <script src="js/functwo.js" type="module"></script>
   </body>
 </html>
