@@ -922,6 +922,13 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
+.bg-yellow {
+  --tw-bg-opacity: 1;
+  background-color: rgb(
+    255 255 200 / 0.5
+  ); /* Very light yellow with 50% transparency */
+}
+
 .bg-\[\#913b8e\] {
   --tw-bg-opacity: 1;
   background-color: rgb(145 59 142 / var(--tw-bg-opacity, 1));
@@ -1421,4 +1428,12 @@ html::-webkit-scrollbar-thumb {
   direction: ltr;
   -webkit-font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
+}
+
+.text-acv {
+  color: rgb(178, 222, 39, 1);
+}
+
+.bg-acv {
+  background-color: rgb(178, 222, 39, 1);
 }
