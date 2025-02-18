@@ -17,17 +17,36 @@
           <div
             class="flex justify-between items-center py-5 pl-10 pr-5 relative"
           >
-            <h2 class="font-bold text-lg">DispatchTracker LOADBOX</h2>
+            <div class="flex items-center gap-5">
+              <!-- Status Indicator -->
+              <!-- Status Indicator -->
+              <div id="status-indicator" class="flex items-center gap-2">
+                <div id="status-circle" class="status-circle bg-green"></div>
+                <span id="status-text" class="status-text text-green"
+                  >Waiting</span
+                >
+              </div>
+              <h2
+                class="flex items-center gap-2 text-xl font-semibold text-gray-900"
+              >
+                <image
+                  src="./assets/logo.jpg"
+                  alt="logo"
+                  class="w-6 h-6 object-cover"
+                />
+                <span class="tracking-wide">
+                  DispatchTracker <span class="text-green-600">Loadbox</span>
+                </span>
+              </h2>
+            </div>
+
             <div class="relative">
-              <!-- Dots Button -->
               <div
                 class="flex items-center justify-center px-3 py-2 rounded-md bg-white cursor-pointer"
                 id="menu-button"
               >
                 <i class="fa-solid fa-ellipsis-vertical"></i>
               </div>
-
-              <!-- Dropdown Menu -->
               <div
                 id="menu"
                 class="absolute right-0 mt-2 w-40 bg-white border border-gray-300 rounded-md shadow-lg hidden z-10"
