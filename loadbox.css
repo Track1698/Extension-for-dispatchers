@@ -205,3 +205,6 @@ body {
 .new-item {
   background-color: #8dff7196;
 }
+.new-item:hover {
+  background-color: #8dff7196;
+}
