@@ -692,8 +692,17 @@ video {
   height: 1.5rem;
 }
 
+html,
+body {
+  min-height: 100vh;
+}
+
 .min-h-\[114px\] {
   min-height: 114px;
+}
+
+.min-h-screen {
+  min-height: 100vh;
 }
 
 .w-40 {
@@ -1250,6 +1259,21 @@ button:hover {
   cursor: pointer;
 }
 
+#main-container {
+  background-color: #f3f4f6;
+}
+
+#details-container {
+  display: none;
+  background-color: white;
+}
+
+@media (min-width: 1024px) {
+  #details-container {
+    display: block;
+  }
+}
+
 /* Add hover effect for dispatch-info content */
 
 .dispatch-info:hover {
@@ -1436,4 +1460,10 @@ html::-webkit-scrollbar-thumb {
 
 .bg-acv {
   background-color: rgb(178, 222, 39, 1);
+}
+
+@media (min-width: 1024px) {
+  .lg\:max-h-\[150vh\] {
+    max-height: 150vh;
+  }
 }
