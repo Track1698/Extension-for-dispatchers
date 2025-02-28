@@ -11,8 +11,9 @@ if (-not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 $DEBUG_MODE = $true
 
 # Function to add temporary routes
-function Add-Routes {
-    Write-Host "Adding static routes (temporary)..."
+# Function to add all static routes (temporary)
+function Add-AllRoutes {
+    Write-Host "Adding all static routes (temporary)..."
     route add 20.241.170.106 mask 255.255.255.255 192.168.1.50
     route add 170.218.212.32 mask 255.255.255.255 192.168.1.50
     route add 170.218.247.28 mask 255.255.255.255 192.168.1.50
@@ -22,25 +23,33 @@ function Add-Routes {
     route add 104.18.6.3 mask 255.255.255.255 192.168.1.50
     route add 104.18.7.3 mask 255.255.255.255 192.168.1.50
     route add 20.253.113.3 mask 255.255.255.255 192.168.1.50
-    Write-Host "Routes added successfully."
+    Write-Host "Temporary routes added successfully."
 }
 
-# Function to add permanent routes
-function Add-RoutesPermanent {
-    Write-Host "Adding static routes (permanent)..."
+# Function to add all static routes (permanent)
+function Add-AllRoutesPermanent {
+    Write-Host "Adding all static routes (permanent)..."
     route -p add 20.241.170.106 mask 255.255.255.255 192.168.1.50
     route -p add 170.218.212.32 mask 255.255.255.255 192.168.1.50
+    route -p add 170.218.247.28 mask 255.255.255.255 192.168.1.50
+    route -p add 23.49.180.57 mask 255.255.255.255 192.168.1.50
+    route -p add 34.172.230.133 mask 255.255.255.255 192.168.1.50
+    route -p add 34.121.25.40 mask 255.255.255.255 192.168.1.50
     route -p add 104.18.6.3 mask 255.255.255.255 192.168.1.50
     route -p add 104.18.7.3 mask 255.255.255.255 192.168.1.50
     route -p add 20.253.113.3 mask 255.255.255.255 192.168.1.50
     Write-Host "Permanent routes added successfully."
 }
 
-# Function to remove routes
-function Remove-Routes {
-    Write-Host "Removing static routes..."
+# Function to remove all static routes
+function Remove-AllRoutes {
+    Write-Host "Removing all static routes..."
     route delete 20.241.170.106
     route delete 170.218.212.32
+    route delete 170.218.247.28
+    route delete 23.49.180.57
+    route delete 34.172.230.133
+    route delete 34.121.25.40
     route delete 104.18.6.3
     route delete 104.18.7.3
     route delete 20.253.113.3
