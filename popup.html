@@ -433,108 +433,53 @@
         </div>
       </div>
       <h1>Blacklist</h1>
-      <table>
+      <table class="vehicles-list-table">
         <thead>
           <tr>
             <th>N</th>
-            <th>Name</th>
-            <th>Address</th>
+            <th>Type</th>
+            <th>Value</th>
+            <th>Scope</th>
+            <th></th>
           </tr>
         </thead>
         <tbody id="tableBody">
+          <!-- New row for adding items -->
           <tr>
             <td></td>
             <td>
-              <input
-                type="text"
-                placeholder="Name"
-                id="addBlacklistItemNameInput"
-              />
+              <select id="addBlacklistItemTypeInput">
+                <option value="ZIP">ZIP</option>
+                <option value="COMPANY">COMPANY</option>
+              </select>
             </td>
             <td>
               <input
                 type="text"
-                placeholder="Address"
-                id="addBlacklistItemAddressInput"
+                placeholder="Value"
+                id="addBlacklistItemValueInput"
               />
+            </td>
+            <td>
+              <select id="addBlacklistItemScopeInput">
+                <option value="personal">Personal</option>
+                <option value="company">Company</option>
+              </select>
             </td>
             <td style="width: 24px; border: none">
               <button class="add-row-btn" id="addRowButton">+</button>
             </td>
           </tr>
+          <!-- Existing blacklist items -->
           <tr>
             <td>1</td>
             <td>-</td>
             <td>-</td>
+            <td>-</td>
+            <td></td>
           </tr>
         </tbody>
       </table>
-    </div>
-
-    <div id="adminPanelControlElement" class="display-none display-none-last">
-      <div class="back-arrow-container">
-        <div title="Go back" class="backArrow" id="backArrowButton2">
-          &#10140;
-        </div>
-      </div>
-
-      <h1>Admin Panel</h1>
-
-      <div class="admin-panel-form-group">
-        <label class="admin-panel-label" for="email">Email:</label>
-        <input type="email" id="email" class="admin-panel-input" />
-      </div>
-      <div class="admin-panel-form-group">
-        <label class="admin-panel-label" for="password">Password:</label>
-        <input type="password" id="password" class="admin-panel-input" />
-      </div>
-      <div class="admin-panel-form-group">
-        <label class="admin-panel-label" for="accountType">Account Type:</label>
-        <input type="text" id="accountType" class="admin-panel-input" />
-      </div>
-      <div class="admin-panel-form-group">
-        <label class="admin-panel-label" for="companyName">Company Name:</label>
-        <input type="text" id="companyName" class="admin-panel-input" />
-      </div>
-      <div class="admin-panel-form-group">
-        <label class="admin-panel-label" for="expireDate">Expire Date:</label>
-        <input type="date" id="expireDate" class="admin-panel-input" />
-      </div>
-      <div class="admin-panel-form-group">
-        <label class="admin-panel-label" for="mc">MC:</label>
-        <input type="text" id="mc" class="admin-panel-input" />
-      </div>
-      <div class="admin-panel-form-group">
-        <label class="admin-panel-label" for="subscriptions"
-          >Subscriptions:</label
-        >
-        <input type="text" id="subscriptions" class="admin-panel-input" />
-      </div>
-
-      <div class="admin-panel-buttons">
-        <button class="admin-panel-button">Load User</button>
-        <button class="admin-panel-button">Load Default Values</button>
-        <button class="admin-panel-button">Save</button>
-      </div>
-
-      <h3>Test Buttons</h3>
-      <div class="admin-panel-test-buttons">
-        <button class="admin-panel-button" id="testFunction1Button">
-          Test1
-        </button>
-        <button class="admin-panel-button" id="testFunction2Button">
-          Test2
-        </button>
-        <button class="admin-panel-button" id="testFunction3Button">
-          Test3
-        </button>
-        <button class="admin-panel-button" id="testFunction4Button">
-          Test4
-        </button>
-        <button class="admin-panel-button" id="testFunction5Button">
-          Test5
-        </button>
-      </div>
     </div>
 
     <div
@@ -627,14 +572,10 @@
             <a href="#" id="turnOffControlButton">Turn off active searches</a>
           </li>
           <li>
-            <a href="#" id="blacklistControlButton" class="not-available"
-              >Blacklist</a
-            >
+            <a href="#" id="blacklistControlButton">Blacklist</a>
           </li>
           <li><a href="#" id="profileControlButton">Profile settings</a></li>
-          <li id="adminPanelLiElement">
-            <a href="#" id="adminPanelControlButton">Admin Panel</a>
-          </li>
+
           <li><a href="#" id="logoutControlButton">Logout</a></li>
         </ul>
 

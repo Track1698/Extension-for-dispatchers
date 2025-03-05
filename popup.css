@@ -18,6 +18,43 @@ body {
   align-items: center;
 }
 
+.status-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.status-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+.green-dot,
+.red-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.green-dot {
+  background-color: #28a745; /* Bootstrap green */
+}
+
+.red-dot {
+  background-color: #dc3545; /* Bootstrap red */
+}
+
+.status-list {
+  font-weight: normal;
+  color: #555;
+}
+
 #loginMessage {
   position: absolute;
   bottom: 100px;
@@ -676,20 +713,32 @@ body {
 }
 
 /* Card Body */
-.card-body {
+
+.card-body-wrapper {
   padding: 16px;
   background: #f9f9f9;
   border-top: 1px solid #ddd;
+  transition: max-height 0.35s ease;
+  align-items: start;
+  justify-items: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body-wrapper.collapse {
+  display: none;
+}
+
+.card-body {
+  width: full;
+  padding: 16px;
+  background: #f9f9f9;
   transition: max-height 0.35s ease;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1rem;
   align-items: start;
   justify-items: start;
-}
-
-.card-body.collapse {
-  display: none;
 }
 
 .card-row {
@@ -913,9 +962,10 @@ ul li a {
 }
 
 #blacklistControlElement {
-  width: 100%;
+  width: 80%;
   overflow-x: auto;
   text-align: center;
+  scrollbar-width: none;
 }
 
 #blacklistControlElement input {
@@ -926,27 +976,43 @@ ul li a {
 table {
   width: 90%;
   border-collapse: collapse;
-  margin: 5%;
+  margin: 5% auto;
 }
+
+/* Specific styling for our vehicles (or blacklist) table */
 .vehicles-list-table th,
 .vehicles-list-table td {
   border-top: 1px solid #ddd;
-  padding: 5px;
+  padding: 5px 5px 5px 30px;
   text-align: left;
-  padding-left: 30px;
 }
-th {
+
+.vehicles-list-table th {
   background-color: #f2f2f2;
   color: #243b55;
 }
 
+.vehicles-list-table input,
+.vehicles-list-table select {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Styling for the add row button */
 .add-row-btn {
   background-color: #ffffff;
   color: black;
-  border: none;
+  border: 1px solid #ddd;
   cursor: pointer;
   font-size: 24px;
   border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 22px;
 }
 
 .dropdown-check-list {
