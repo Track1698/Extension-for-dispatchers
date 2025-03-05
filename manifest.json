@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "DispatchTracker DEV",
-  "version": "1.0",
-  "description": "აღწერა",
+  "name": "DispatchTracker",
+  "version": "4",
+  "description": "Best helper for Dispatchers",
   "permissions": [
     "cookies",
     "webRequest",
