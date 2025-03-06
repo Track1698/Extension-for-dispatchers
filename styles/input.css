@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #3b82f6;
+  transition: width 0.3s ease-in-out;
+}
+
+button:hover::before {
+  width: 100%;
+}
+button:hover {
+  color: #3b82f6;
+}
+
+.active-tab::before {
+  width: 100%;
+}
+
+.dispatch-info {
+  width: full;
+  border-top: 1px solid #ddd;
+  padding: 20px;
+  cursor: pointer;
+}
+
+/* Add hover effect for dispatch-info content */
+.dispatch-info:hover {
+  background-color: white;
+}
+
+@media (min-width: 1024px) {
+  /* lg breakpoint */
+  .expand-icon {
+    display: none !important;
+  }
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d1d1 transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #d1d1d1;
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+/* For the entire page */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d1d1 transparent;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: #d1d1d1;
+  border-radius: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.new-item {
+  background-color: yellow !important;
+  transition: background-color 2s ease-in-out;
+}

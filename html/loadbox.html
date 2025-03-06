@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../styles/output.css" rel="stylesheet" />
+    <link href="../styles/input.css" rel="stylesheet" />
+
+    <link href="../styles/loadbox.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main
+      id="main-container"
+      class="w-full flex flex-col lg:flex-row min-h-screen"
+    >
+      <div class="w-full lg:w-2/5 bg-gray-100">
+        <div class="flex flex-col">
+          <div
+            class="flex justify-between items-center py-5 pl-10 pr-5 relative"
+          >
+            <div class="flex items-center gap-5">
+              <!-- Status Indicator -->
+              <!-- Status Indicator -->
+              <div id="status-indicator" class="flex items-center gap-2">
+                <div id="status-circle" class="status-circle bg-green"></div>
+                <span id="status-text" class="status-text text-green"
+                  >Waiting</span
+                >
+              </div>
+              <h2
+                class="flex items-center gap-2 text-xl font-semibold text-gray-900"
+              >
+                <image
+                  src="../assets/Full logo.png"
+                  alt="logo"
+                  class="w-6 h-6 object-cover"
+                />
+                <span class="tracking-wide">
+                  DispatchTracker <span class="text-green-600">Loadbox</span>
+                </span>
+              </h2>
+            </div>
+
+            <div class="relative">
+              <div
+                class="flex items-center justify-center px-3 py-2 rounded-md bg-white cursor-pointer"
+                id="menu-button"
+              >
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+              </div>
+              <div
+                id="menu"
+                class="absolute right-0 mt-2 w-40 bg-white border border-gray-300 rounded-md shadow-lg hidden z-10"
+              >
+                <ul class="py-2">
+                  <li
+                    class="px-4 py-2 text-gray-700 hover:bg-gray-200 cursor-pointer"
+                    id="delete-all"
+                  >
+                    Delete All
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- tabs -->
+          <div>
+            <div class="flex gap-10 px-5">
+              <button
+                class="flex-1 pb-6 pt-2 text-center border-transparent focus:outline-none active-tab"
+                data-tab="all"
+              >
+                All
+                <span
+                  class="rounded-3xl bg-gray-300 px-3 py-1 text-black text-sm ml-1"
+                  >277</span
+                >
+              </button>
+
+              <button
+                class="flex-1 pb-6 pt-2 text-center border-transparent focus:outline-none"
+                data-tab="starred"
+              >
+                Starred
+                <span
+                  class="rounded-3xl bg-gray-300 px-3 py-1 text-black text-sm ml-1"
+                  >4</span
+                >
+              </button>
+              <button
+                class="flex-1 pb-6 pt-2 text-center border-transparent focus:outline-none"
+                data-tab="deleted"
+              >
+                Recently Deleted
+              </button>
+            </div>
+            <div
+              id="tab-content"
+              class="overflow-y-auto custom-scrollbar overflow-x-hidden px-5 text-gray-700 max-h-[80vh] lg:max-h-[150vh]"
+            ></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right-side container for details -->
+      <div
+        id="details-container"
+        class="w-full lg:w-3/5 overflow-y-auto overflow-x-hidden no-scrollbar"
+      ></div>
+    </main>
+
+    <script type="module" src="../js/script.js"></script>
+    <script src="../js/alerts.js" type="module"></script>
+  </body>
+</html>
