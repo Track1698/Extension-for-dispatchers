@@ -1467,3 +1467,14 @@ html::-webkit-scrollbar-thumb {
     max-height: 150vh;
   }
 }
+
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #f3f4f6; /* Equivalent to bg-gray-100 */
+}
+
+.h-screen {
+  height: 100vh;
+}

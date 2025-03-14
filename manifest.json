@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "DispatchTracker",
-  "version": "4.1",
+  "version": "4.2",
   "description": "Best helper for Dispatchers",
   "permissions": [
     "cookies",
@@ -14,7 +14,7 @@
   ],
   "host_permissions": ["<all_urls>"],
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "./html/popup.html",
     "default_icon": {
       "16": "assets/16.png",
       "48": "assets/48.png",
@@ -23,7 +23,7 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["loadbox.html"],
+      "resources": ["./html/loadbox.html"],
       "matches": ["<all_urls>"]
     }
   ],
@@ -34,11 +34,5 @@
   },
   "background": {
     "service_worker": "background.js"
-  },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ]
+  }
 }

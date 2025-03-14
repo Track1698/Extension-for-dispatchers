@@ -104,9 +104,7 @@
 
         <!-- Optional: Additional inputs like radius -->
         <div class="input-group">
-          <label for="startRadius" class="form-label"
-            >Start Radius (Miles):</label
-          >
+          <label for="startRadius" class="form-label">Pickup Radius:</label>
           <input
             type="number"
             id="startRadius"
@@ -116,7 +114,7 @@
           />
         </div>
         <div class="input-group">
-          <label for="endRadius" class="form-label">End Radius (Miles):</label>
+          <label for="endRadius" class="form-label">Destination Radius:</label>
           <input
             type="number"
             id="endRadius"
@@ -212,7 +210,7 @@
 
           <!-- Search Along Route -->
           <div class="additional-parameters-grid-container">
-            <!-- <div>
+            <div>
               <label>Search Along Route</label>
               <label for="searchAlongRoute" class="switch">
                 <input
@@ -223,7 +221,19 @@
                 />
                 <span class="slider round"></span>
               </label>
-            </div> -->
+            </div>
+            <div>
+              <label>Use Current Postings</label>
+              <label for="useCurrentPostings" class="switch">
+                <input
+                  type="checkbox"
+                  id="useCurrentPostings"
+                  name="useCurrentPostings"
+                  class="form-checkbox"
+                />
+                <span class="slider round"></span>
+              </label>
+            </div>
 
             <!-- Vehicle Details -->
             <div>
