@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "DispatchTracker",
-  "version": "5.0",
+  "version": "5.1",
   "description": "Best helper for Dispatchers",
   "permissions": [
     "cookies",
